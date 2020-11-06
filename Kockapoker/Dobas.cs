@@ -18,6 +18,8 @@ namespace Kockapoker
       }
     }
 
+        private int pont;
+        public int Pont { get { return pont; } }
     public Dobas()
     {
 
@@ -93,23 +95,23 @@ namespace Kockapoker
       if (darab == 1)
       {
         string[] egyes = new string[] { "", "", "Pár", "Drill", "Póker", "Nagypóker" };
-        return $"{result[0].Szam} {egyes[result[0].Db]}";
+
+                int[] pontok = new int[] {0,0,10,300,600,900 };
+                pont = pontok[result[0].Db] + result[0].Szam;
+
+
+                return $"{result[0].Szam} {egyes[result[0].Db]}";
       }
       else if (darab == 2)
       {
         if (result[0].Db == 3 && result[1].Db == 2)
         {
-          if( result[0].Szam > result[1].Szam)
-          {
+            pont = 500 + ((result[0].Szam * 10) + result[1].Szam);
             return $"{result[0].Szam}-{result[1].Szam} Full";
-          }
-          else
-          {
-            return $"{result[1].Szam}-{result[0].Szam} Full";
-          }
         }
         else
         {
+                    pont = 100 + (result[1].Szam*10 + result[0].Szam);
           return $"{result[1].Szam}-{result[0].Szam} Pár";
         }
       }
@@ -117,15 +119,17 @@ namespace Kockapoker
       {
         if (eredemeny[6] == 0)
         {
+                    pont = 700;
           return "Kissor";
         }
         else if (eredemeny[1] == 0)
         {
+                    pont = 800;
           return "Nagysor";
         }
 
       }
-      
+            pont = 1;
       return "Szemét";
     }
   }

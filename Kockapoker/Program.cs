@@ -28,18 +28,19 @@ namespace Kockapoker
     }
     static void Main(string[] args)
     {
-      //Ellenorzes();
+            //Ellenorzes();
 
-      Dobas gep = new Dobas();
-      Dobas ember = new Dobas();
+            //Dobas gep = new Dobas();
+            //Dobas ember = new Dobas();
 
-      gep.EgyDobas();
-      ember.EgyDobas();
+            //gep.EgyDobas();
+            //ember.EgyDobas();
 
-      gep.Kiiras();
-      ember.Kiiras();
+            //gep.Kiiras();
+            //ember.Kiiras();
 
-      Console.ReadLine();
+
+            Console.ReadLine();
     }
   }
 }
